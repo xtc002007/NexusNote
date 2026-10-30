@@ -1,70 +1,100 @@
 # NexusNote
 
-> 写作无界，文档归一：让自媒体、极客与思考者重归心流的本地文档工作台。
+> **Local-First, All-in-One Knowledge Workstation & WYSIWYG Document Studio.**
 
-[![Release](https://img.shields.io/github/v/release/xtc002007/NexusNote?style=flat-square)](https://github.com/xtc002007/NexusNote/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20(x64)-blue.svg?style=flat-square)](https://nexustools.tech)
+[![GitHub Release](https://img.shields.io/github/v/release/xtc002007/NexusNote?style=flat-square&color=teal)](https://github.com/xtc002007/NexusNote/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20x64-blue.svg?style=flat-square)](https://nexustools.tech)
+[![WYSIWYG](https://img.shields.io/badge/editor-Milkdown%20Crepe%20(ProseMirror)-00b4d8.svg?style=flat-square)](https://milkdown.dev)
+[![Engine](https://img.shields.io/badge/backend-Rust%20%7C%20Tauri%20v2-orange.svg?style=flat-square)](https://tauri.app)
 [![License](https://img.shields.io/badge/license-Proprietary-lightgrey.svg?style=flat-square)](./LICENSE)
 
 ---
 
-## 📖 简介 / Overview
+## 📌 Overview
 
-**NexusNote 随想笔** 是 [NexusTools](https://nexustools.tech) 团队打造的专业桌面工具。  
-本地优先、轻快纯粹的 AI 全格式文档中心与所见即所得 (WYSIWYG) 创作工作台。
+**NexusNote** is a local-first, unified document management and knowledge authoring workstation designed for researchers, writers, academics, and knowledge architects. Combining a rich **What-You-See-Is-What-You-Get (WYSIWYG) Markdown editor** (built on Milkdown Crepe and ProseMirror) with a high-performance **Rust Document Engine**, NexusNote handles Markdown notes, multi-hundred-page PDF documents, technical schematics, and source code files inside one integrated desktop environment.
 
-本仓库为 **官方公开发布与分发门面仓库**，专门用于对外发布稳定安装包、版本更新日志（Release Notes）以及 Windows Package Manager (winget) 的自动化分发通道。
-
----
-
-## ✨ 核心亮点 / Features
-
-- **真正的所见即所得所想即所写体验（无须分屏预览，沉浸式打字机模式）**
-- **11 款精选排版主题，中文长文排版极度美观**
-- **内置 AI 智能文档助手与全格式智能转换引擎**
-- **纯本地离线优先，全生命周期文档资产完全归用户所有**
+This repository serves as the **official public distribution and release portal** for NexusNote binaries, release notes, and package manager feeds (including [winget](https://github.com/microsoft/winget-pkgs)).
 
 ---
 
-## 🚀 安装与下载 / Installation
+## ⚡ Key Highlights & Core Capabilities
 
-### 方式 1: 通过 Windows Package Manager (winget) 推荐
+### 1. Unified Multi-Format Document Center
+- **Unified Document Pipeline**: Seamlessly open and organize `.md`, `.txt`, `.json`, `.yaml`, source code, `.pdf`, and visual assets (`.png`, `.jpg`, `.webp`, `.svg`) in a single workspace.
+- **High-Performance PDF Viewer**: Powered by native **lopdf** and **Google PDFium**. Renders multi-hundred-page research papers and e-books through per-page WebP streaming and virtualized window scrolling—heavy PDF binaries never clog the frontend WebView memory.
+- **Intelligent Image Engine**: Automatic EXIF orientation normalization, fast local thumbnail caching, on-demand zoom inspection, and raw SVG vector mode.
 
-只需在 Windows Terminal / PowerShell 中输入：
+### 2. True WYSIWYG Editing with Source-Text Fidelity
+- **Milkdown Crepe & ProseMirror Core**: Enjoy modern, friction-free WYSIWYG editing with block-level drag-and-drop handles, intuitive slash commands (`/heading`, `/table`, `/code`), and inline formatting menus.
+- **100% Source-Text Fidelity**: Preserves standard CommonMark/GFM formatting under the hood. Documents created in NexusNote can be immediately opened in Obsidian, Typora, VS Code, or GitHub without syntax distortion.
+- **Interactive Tables & Math**: Inline table editing and asynchronous **KaTeX** math formulas rendering smoothly in real-time.
+
+### 3. Integrated Diagramming & 50+ Language Highlighting
+- **Mermaid 11 Support**: Direct visualization of flowcharts, sequence diagrams, state machines, entity-relationship diagrams, and Gantt charts.
+- **CodeMirror 6 Engine**: Embedded syntax-highlighted code blocks supporting over 50 programming, markup, and configuration languages.
+
+### 4. Deep Workspace Search & SQLite FTS5 Indexing
+- **Cross-Format Full-Text Search**: SQLite FTS5 engine indexes not only your Markdown notes and text files, but also extracts and indexes text content from PDF documents.
+- **Instant Search Results**: Substring and boolean keyword filtering with live preview snippets and jump-to-location accuracy.
+
+### 5. Curated Typography & Themes
+- **11 Professional Themes**: Meticulously crafted typographic colorways tailored for long reading sessions, technical documentation, and nocturnal writing (featuring Light, Dark, Sepia, Nord, Dracula, and high-contrast modes).
+
+---
+
+## 🚀 Installation & Downloads
+
+### Method 1: Windows Package Manager (winget) — Recommended
+
+Install NexusNote via Windows Terminal or PowerShell:
 
 ```powershell
 winget install NexusTools.NexusNote
 ```
 
-升级现有版本：
+Upgrade to the latest version:
 
 ```powershell
 winget upgrade NexusTools.NexusNote
 ```
 
-### 方式 2: GitHub Releases 直接下载
+---
 
-访问 [Releases 页面](https://github.com/xtc002007/NexusNote/releases/latest)，下载最新版本的 Windows 安装包：
-- `NexusNote_<version>_windows_x64_setup.exe`（推荐，支持应用内平滑自动升级）
-- `NexusNote_<version>_windows_x64_portable.zip`（免安装绿色便携版）
+### Method 2: Direct Download from GitHub Releases
 
-### 方式 3: NexusTools 官方网站
+Visit the [GitHub Releases](https://github.com/xtc002007/NexusNote/releases/latest) page to download official packages:
 
-前往 [NexusTools 官网](https://nexustools.tech) 了解详情并一键下载。
+| Asset | Description | Recommended For |
+| :--- | :--- | :--- |
+| `NexusNote_<version>_windows_x64_setup.exe` | Standard Windows NSIS Installer | General desktop installation (includes auto-updater) |
+| `NexusNote_<version>_windows_x64_portable.zip` | Standalone Portable Archive | Portable drives & zero-install workflows |
 
 ---
 
-## 🔄 自动更新与安全保障
+### Method 3: Official NexusTools Suite
 
-- **应用内自动更新**：软件内置静默更新检测与差分安全下载机制，由 NexusTools 官方分发端点提供稳定支持。
-- **数字验签与防篡改**：所有官方发布资产均附带 minisign ed25519 防篡改数字签名与 Windows Authenticode 代码签名。
+Download NexusNote directly from the [NexusTools Official Portal](https://nexustools.tech).
 
 ---
 
-## 📄 软件使用许可 / License
+## 🔒 Security, Authenticity & Verification
 
-本项目采用 [NexusTools 软件专有许可协议 (EULA)](./LICENSE)。  
-免费基础功能可永久免费使用；高级专业特性受 NexusTools 统一账号与订阅协议约束。
+- **Code Signing**: All executables are signed with Windows Authenticode digital certificates.
+- **Cryptographic Signatures**: Minisign Ed25519 signatures (`.sig`) are provided for every setup installer.
+- **Silent Background Updates**: In-app updater securely checks official NexusTools endpoints over TLS 1.3 with cryptographic verification.
 
-- **问题反馈与建议**：欢迎在 [GitHub Issues](https://github.com/xtc002007/NexusNote/issues) 提交反馈。
-- **官方技术支持**：https://nexustools.tech
+---
+
+## ⚖️ License & EULA
+
+NexusNote is distributed under the [NexusTools End-User License Agreement (EULA)](./LICENSE).  
+- Core local note-taking, WYSIWYG editing, PDF reading, and FTS5 search are permanently free for personal and commercial usage.  
+- Optional cloud AI writing assistance and cross-device sync require a NexusTools subscription.
+
+---
+
+## 💬 Community & Support
+
+- **Bug Reports & Issues**: [GitHub Issues](https://github.com/xtc002007/NexusNote/issues)
+- **Official Portal**: [https://nexustools.tech](https://nexustools.tech)
